@@ -6,13 +6,20 @@ namespace IntegrationService
 {
     public class HelloJob : IJob
     {
-        public HelloJob()
+        private MyServices MyServices { get; set; }
+        public HelloJob(MyServices myServices)
         {
+            MyServices = myServices;
         }
 
         public virtual void Execute(IJobExecutionContext context)
         {
-            Console.WriteLine(string.Format("Hello World! - {0}", System.DateTime.Now.ToString("r")));
+            var response = MyServices.Any(new ServiceModel.Hello
+            {
+                Name = "Michael Clark"
+            });
+
+            response.PrintDump();
         }
     }
 }
