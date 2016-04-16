@@ -27,8 +27,7 @@
     <Description>ServiceStack.Funq.Quartz allows an easy registration of all Quartz Jobs within ServiceStack's Funq container. This allows for dependency injection within any Quartz Job.</Description>
     <ReleaseNotes>
     </ReleaseNotes>
-    <ProjectUrl>
-    </ProjectUrl>
+    <ProjectUrl>https://github.com/CodeRevver/ServiceStackWithQuartz</ProjectUrl>
     <LicenseUrl>
     </LicenseUrl>
     <Copyright>
