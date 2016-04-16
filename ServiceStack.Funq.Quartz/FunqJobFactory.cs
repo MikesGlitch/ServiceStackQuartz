@@ -3,17 +3,31 @@ using Quartz;
 using Quartz.Spi;
 using System;
 
-namespace ServiceStackWithQuartz
+namespace ServiceStack.Funq.Quartz
 {
+    /// <summary>
+    ///     Resolve Quartz Job and it's dependencies from Funq container
+    /// </summary>
     public class FunqJobFactory : IJobFactory
     {
         private readonly Container _container;
 
+        /// <summary>
+        /// Initialises a new instance of the FunqJobFactory
+        /// </summary>
+        /// <param name="container"></param>
         public FunqJobFactory(Container container)
         {
             _container = container;
         }
 
+        /// <summary>
+        ///     Called by the Quartz Scheduler at the time of the trigger firing
+        ///     in order to produce a IJob instance on which to call execute
+        /// </summary>
+        /// <param name="bundle"></param>
+        /// <param name="scheduler"></param>
+        /// <returns></returns>
         public IJob NewJob(TriggerFiredBundle bundle, IScheduler scheduler)
         {
             if (bundle == null) throw new ArgumentNullException(nameof(bundle));
@@ -28,9 +42,12 @@ namespace ServiceStackWithQuartz
             return newJob;
         }
 
+        /// <summary>
+        ///     Allows the job factory to destroy/cleanup the job if needed
+        /// </summary>
+        /// <param name="job"></param>
         public void ReturnJob(IJob job)
         {
-            //Allows the job factory to destroy/cleanup the job if needed.
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Funq;
+using Quartz;
 using ServiceStack;
+using ServiceStack.Funq.Quartz;
 using ServiceStackWithQuartz.ServiceInterface;
 
 namespace ServiceStackWithQuartz
@@ -23,8 +25,26 @@ namespace ServiceStackWithQuartz
         /// <param name="container"></param>
         public override void Configure(Container container)
         {
-            container.RegisterAll();
-            container.Resolve<IQuartzInitializer>().Start();
+            container.RegisterQuartzJobs(typeof(HelloJob));
+            var scheduler = container.Resolve<IScheduler>();
+            scheduler.Start();
+
+            /* Schedule HelloJob */
+            IJobDetail job = JobBuilder.Create<HelloJob>()
+                .WithIdentity("myJob", "group1")
+                .Build();
+
+            ITrigger trigger = TriggerBuilder.Create()
+              .WithIdentity("myTrigger", "group1")
+              .StartNow()
+              .WithSimpleSchedule(x => x
+                  .WithIntervalInSeconds(10)
+                  .RepeatForever())
+              .Build();
+
+            var test = container.Resolve<IScheduler>();
+            test.ScheduleJob(job, trigger);
+
 
             //Config examples
             //this.Plugins.Add(new PostmanFeature());

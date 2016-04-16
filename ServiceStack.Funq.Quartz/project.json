@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0-*",
+  "description": "ServiceStack.Funq.Quartz Class Library",
+  "authors": [ "PandaMan" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+    "frameworks": {
+        "net451": {
+            "dependencies": {
+                "ServiceStack": "4.0.54"
+            }
+        }
+    },
+    "dependencies": {
+        "Quartz": "2.3.3"
+    }
+}

@@ -58,6 +58,9 @@
       <HintPath>..\..\packages\ServiceStack.Common.4.0.54\lib\net40\ServiceStack.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Funq.Quartz">
+      <HintPath>..\..\artifacts\bin\ServiceStack.Funq.Quartz\Debug\net451\ServiceStack.Funq.Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ServiceStack.Interfaces.4.0.54\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
       <Private>True</Private>
@@ -90,12 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IoC\IoCRegistry.cs" />
-    <Compile Include="Quartz\IQuartzInitializer.cs" />
-    <Compile Include="Quartz\QuartzInitializer.cs" />
     <Compile Include="Quartz\Jobs\HelloJob.cs" />
-    <Compile Include="IoC\JobRegistrar.cs" />
-    <Compile Include="Quartz\FunqJobFactory.cs" />
     <Compile Include="AppHost.cs" />
     <Compile Include="WinServiceInstaller.cs">
       <SubType>Component</SubType>
