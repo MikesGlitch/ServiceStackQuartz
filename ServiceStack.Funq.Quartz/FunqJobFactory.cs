@@ -1,7 +1,7 @@
-﻿using Funq;
+﻿using System;
+using Funq;
 using Quartz;
 using Quartz.Spi;
-using System;
 
 namespace ServiceStack.Funq.Quartz
 {

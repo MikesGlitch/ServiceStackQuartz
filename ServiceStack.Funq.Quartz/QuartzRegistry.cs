@@ -20,12 +20,12 @@ namespace ServiceStack.Funq.Quartz
         public static void RegisterQuartzJobs(this Container container, Type jobsAssembly)
         {
             if (jobsAssembly == null) throw new ArgumentNullException(nameof(jobsAssembly));
-            
+
             container.RegisterAs<FunqJobFactory, IJobFactory>();
             jobsAssembly.Assembly.GetTypes()
                 .Where(type => !type.IsAbstract && typeof(IJob).IsAssignableFrom(type))
                 .Each(x => container.RegisterAutoWiredType(x));
-            
+
             ISchedulerFactory schedFact = new StdSchedulerFactory();
             IScheduler scheduler = schedFact.GetScheduler();
             scheduler.JobFactory = container.Resolve<IJobFactory>();

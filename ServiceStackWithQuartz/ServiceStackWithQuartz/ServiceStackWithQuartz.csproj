@@ -58,9 +58,6 @@
       <HintPath>..\..\packages\ServiceStack.Common.4.0.54\lib\net40\ServiceStack.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ServiceStack.Funq.Quartz">
-      <HintPath>..\..\artifacts\bin\ServiceStack.Funq.Quartz\Debug\net451\ServiceStack.Funq.Quartz.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ServiceStack.Interfaces.4.0.54\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
       <Private>True</Private>
@@ -127,6 +124,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ServiceStack.Funq.Quartz\ServiceStack.Funq.Quartz.csproj">
+      <Project>{53f81721-dc8a-461c-9816-548f954f07e9}</Project>
+      <Name>ServiceStack.Funq.Quartz</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceStackWithQuartz.ServiceInterface\ServiceStackWithQuartz.ServiceInterface.csproj">
       <Project>{130ded02-5984-487c-93dd-0d264eed140e}</Project>
       <Name>ServiceStackWithQuartz.ServiceInterface</Name>
