@@ -1,10 +1,10 @@
 ﻿using Funq;
-using ServiceStackWithQuartz.ServiceInterface;
 using ServiceStack;
+using ServiceStackWithQuartz.ServiceInterface;
 
 namespace ServiceStackWithQuartz
 {
-    public class AppHost : AppHostHttpListenerBase
+    public class AppHost : AppSelfHostBase
     {
         /// <summary>
         /// Default constructor.
