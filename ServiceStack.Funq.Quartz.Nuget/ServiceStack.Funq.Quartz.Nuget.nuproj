@@ -19,7 +19,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>ServiceStack.Funq.Quartz</Id>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Title>ServiceStack.Funq.Quartz</Title>
     <Authors>CodeRevver</Authors>
     <Owners>CodeRevver</Owners>
@@ -28,11 +28,11 @@
     <ReleaseNotes>
     </ReleaseNotes>
     <ProjectUrl>https://github.com/CodeRevver/ServiceStackWithQuartz</ProjectUrl>
-    <LicenseUrl>
-    </LicenseUrl>
-    <Copyright>
-    </Copyright>
+    <LicenseUrl>http://mit-license.org/</LicenseUrl>
+    <Copyright>Copyright 2016</Copyright>
     <Tags>ServiceStack, Quartz, Funq, IoC</Tags>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
