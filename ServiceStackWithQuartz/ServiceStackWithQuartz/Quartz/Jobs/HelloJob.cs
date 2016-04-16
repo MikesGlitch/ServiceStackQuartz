@@ -1,6 +1,6 @@
-﻿using ServiceStackWithQuartz.ServiceInterface;
-using Quartz;
+﻿using Quartz;
 using ServiceStack.Text;
+using ServiceStackWithQuartz.ServiceInterface;
 
 namespace ServiceStackWithQuartz
 {
@@ -16,7 +16,7 @@ namespace ServiceStackWithQuartz
         {
             var response = MyServices.Any(new ServiceModel.Hello
             {
-                Name = "Michael Clark"
+                Name = "CodeRevver"
             });
 
             response.PrintDump();

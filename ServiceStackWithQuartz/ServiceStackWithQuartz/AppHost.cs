@@ -42,9 +42,7 @@ namespace ServiceStackWithQuartz
                   .RepeatForever())
               .Build();
 
-            var test = container.Resolve<IScheduler>();
-            test.ScheduleJob(job, trigger);
-
+            scheduler.ScheduleJob(job, trigger);
 
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
