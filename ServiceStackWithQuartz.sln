@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceStackWithQuartz.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceStack.Funq.Quartz", "ServiceStack.Funq.Quartz\ServiceStack.Funq.Quartz.csproj", "{53F81721-DC8A-461C-9816-548F954F07E9}"
 EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "ServiceStack.Funq.Quartz.Nuget", "ServiceStack.Funq.Quartz.Nuget\ServiceStack.Funq.Quartz.Nuget.nuproj", "{7DA34C06-3C3B-460B-A0C7-B20FC3B84E85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{53F81721-DC8A-461C-9816-548F954F07E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F81721-DC8A-461C-9816-548F954F07E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F81721-DC8A-461C-9816-548F954F07E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA34C06-3C3B-460B-A0C7-B20FC3B84E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA34C06-3C3B-460B-A0C7-B20FC3B84E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA34C06-3C3B-460B-A0C7-B20FC3B84E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA34C06-3C3B-460B-A0C7-B20FC3B84E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
