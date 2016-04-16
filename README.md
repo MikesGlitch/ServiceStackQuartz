@@ -4,7 +4,7 @@ ServiceStack.Funq.Quartz allows an easy registration of all Quartz Jobs within S
 
 This repository goes alongside my blog post here:  [Creating a ServiceStack Windows Service that uses Quartz] (http://michaelclark.tech/2016/04/16/creating-a-servicestack-windows-service-that-uses-quartz/)
 
-You can install this package via Nuget with: [install-package Autofac.Extras.Quartz](https://www.nuget.org/)
+You can install this package via Nuget with: [install-package ServiceStack.Funq.Quartz](https://www.nuget.org/)
 
 ##How to use
 Register your jobs with the Funq container by calling the RegisterQuartzJobs with the assembly that contains your Jobs:
