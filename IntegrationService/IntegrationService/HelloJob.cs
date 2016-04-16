@@ -1,6 +1,6 @@
-﻿using Quartz;
-using Quartz.Spi;
-using System;
+﻿using IntegrationService.ServiceInterface;
+using Quartz;
+using ServiceStack.Text;
 
 namespace IntegrationService
 {
