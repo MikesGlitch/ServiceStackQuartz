@@ -1,4 +1,5 @@
-﻿ServiceStackWithQuartz  Build status
+﻿ServiceStackWithQuartz [https://github.com/CodeRevver/ServiceStackWithQuartz]
+
 ServiceStack.Funq.Quartz allows an easy registration of all Quartz Jobs within ServiceStack's Funq container. This allows for dependency injection within any Quartz Job.
 
 This repository goes alongside my blog post here: Creating a ServiceStack Windows Service that uses Quartz
