@@ -14,7 +14,7 @@ Register your jobs with the Funq container by calling the RegisterQuartzJobs wit
     using ServiceStack.Funq.Quartz;
 
     //// This method scans the assembly for the Jobs
-    container.RegisterQuartzJobs(typeof(HelloJob));
+    container.RegisterQuartzScheduler(typeof(HelloJob));
     
     //// Resolve the Quartz Scheduler as normal
     var scheduler = container.Resolve<IScheduler>();
@@ -22,5 +22,19 @@ Register your jobs with the Funq container by calling the RegisterQuartzJobs wit
     //// Start Quartz Scheduler
     scheduler.Start();
 ```
+
+**Advanced Configuration**
+
+There is also support for [Quartz StdSchedulerFactory Config](http://www.quartz-scheduler.net/documentation/quartz-2.x/quick-start.html) ("Configuration" section):
+
+```csharp
+    var quartzConfig = new NameValueCollection();
+    properties["quartz.threadPool.type"] = "Quartz.Simpl.SimpleThreadPool, Quartz";
+    properties["quartz.threadPool.threadCount"] = "5";
+    properties["quartz.threadPool.threadPriority"] = "Normal";
+    
+    container.RegisterQuartzScheduler(typeof(HelloJob), quartzConfig);
+```
+
 ##ServiceStack
 You can find the ServiceStack framework here:  [https://github.com/ServiceStack/ServiceStack](https://github.com/ServiceStack/ServiceStack)
