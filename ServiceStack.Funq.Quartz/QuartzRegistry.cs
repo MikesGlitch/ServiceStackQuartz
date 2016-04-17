@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Linq;
 using Funq;
 using Quartz;
@@ -13,11 +14,12 @@ namespace ServiceStack.Funq.Quartz
     public static class QuartzRegistry
     {
         /// <summary>
-        ///     Registers Quartz Scheduler and Jobs from specified assembly
+        ///     Registers Quartz Scheduler and Jobs from specified assembly, with specified config
         /// </summary>
         /// <param name="container"></param>
         /// <param name="jobsAssembly"></param>
-        public static void RegisterQuartzJobs(this Container container, Type jobsAssembly)
+        /// <param name="quartzConfig"></param>
+        public static void RegisterQuartzScheduler(this Container container, Type jobsAssembly, NameValueCollection quartzConfig = null)
         {
             if (jobsAssembly == null) throw new ArgumentNullException(nameof(jobsAssembly));
 
@@ -26,7 +28,10 @@ namespace ServiceStack.Funq.Quartz
                 .Where(type => !type.IsAbstract && typeof(IJob).IsAssignableFrom(type))
                 .Each(x => container.RegisterAutoWiredType(x));
 
-            ISchedulerFactory schedFact = new StdSchedulerFactory();
+            ISchedulerFactory schedFact = quartzConfig != null
+                ? new StdSchedulerFactory(quartzConfig)
+                : new StdSchedulerFactory();
+
             IScheduler scheduler = schedFact.GetScheduler();
             scheduler.JobFactory = container.Resolve<IJobFactory>();
             container.Register<IScheduler>(scheduler);

@@ -1,4 +1,5 @@
-﻿using Funq;
+﻿using System.Collections.Specialized;
+using Funq;
 using Quartz;
 using ServiceStack;
 using ServiceStack.Funq.Quartz;
@@ -25,7 +26,8 @@ namespace ServiceStackWithQuartz
         /// <param name="container"></param>
         public override void Configure(Container container)
         {
-            container.RegisterQuartzJobs(typeof(HelloJob));
+            var quartzConfig = ConfigureQuartz();
+            container.RegisterQuartzScheduler(typeof(HelloJob), quartzConfig);
             var scheduler = container.Resolve<IScheduler>();
             scheduler.Start();
 
@@ -47,6 +49,20 @@ namespace ServiceStackWithQuartz
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
             //this.Plugins.Add(new CorsFeature());
+        }
+
+        /// <summary>
+        /// Provides Quartz Configuration Settings
+        /// </summary>
+        /// <returns></returns>
+        private NameValueCollection ConfigureQuartz()
+        {
+            /* set thread pool info */
+            var properties = new NameValueCollection();
+            properties["quartz.threadPool.type"] = "Quartz.Simpl.SimpleThreadPool, Quartz";
+            properties["quartz.threadPool.threadCount"] = "5";
+            properties["quartz.threadPool.threadPriority"] = "Normal";
+            return properties;
         }
     }
 }
