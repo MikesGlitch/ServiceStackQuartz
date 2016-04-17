@@ -8,10 +8,10 @@ You can install this package via Nuget with: install-package ServiceStack.Funq.Q
 
 How to use
 
-Register your jobs with the Funq container by calling the RegisterQuartzJobs with the assembly that contains your Jobs:
+Register your jobs with the Funq container by calling the RegisterQuartzScheduler with the assembly that contains your Jobs:
 
     //// This method scans the assembly for the Jobs
-    container.RegisterQuartzJobs(typeof(HelloJob));
+    container.RegisterQuartzScheduler(typeof(HelloJob));
 
     //// Resolve the Quartz Scheduler as normal
     var scheduler = container.Resolve<IScheduler>();
