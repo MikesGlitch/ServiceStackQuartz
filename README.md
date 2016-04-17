@@ -14,7 +14,7 @@ Register your jobs with the Funq container by calling the RegisterQuartzJobs wit
     using ServiceStack.Funq.Quartz;
 
     //// This method scans the assembly for the Jobs
-    container.RegisterQuartzJobs(typeof(HelloJob));
+    container.RegisterQuartzScheduler(typeof(HelloJob));
     
     //// Resolve the Quartz Scheduler as normal
     var scheduler = container.Resolve<IScheduler>();
