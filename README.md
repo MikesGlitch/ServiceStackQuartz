@@ -10,6 +10,9 @@ You can install this package via Nuget with: [install-package ServiceStack.Funq.
 Register your jobs with the Funq container by calling the RegisterQuartzJobs with the assembly that contains your Jobs:
 
 ```csharp
+    //// Add the using
+    using ServiceStack.Funq.Quartz;
+
     //// This method scans the assembly for the Jobs
     container.RegisterQuartzJobs(typeof(HelloJob));
     
