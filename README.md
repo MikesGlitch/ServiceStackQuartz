@@ -36,5 +36,8 @@ There is also support for [Quartz Configuration](http://www.quartz-scheduler.net
     container.RegisterQuartzScheduler(typeof(HelloJob), quartzConfig);
 ```
 
+##Previously asked questions:
+[Resolving a Service with nothing in it](http://stackoverflow.com/questions/36782158/servicestack-funq-quartz-cannot-instantiating-type)
+
 ##ServiceStack
 You can find the ServiceStack framework here:  [https://github.com/ServiceStack/ServiceStack](https://github.com/ServiceStack/ServiceStack)
