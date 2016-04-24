@@ -25,7 +25,7 @@ Register your jobs with the Funq container by calling the RegisterQuartzJobs wit
 
 **Advanced Configuration**
 
-There is also support for [Quartz StdSchedulerFactory Config](http://www.quartz-scheduler.net/documentation/quartz-2.x/quick-start.html) ("Configuration" section):
+There is also support for [Quartz Configuration](http://www.quartz-scheduler.net/documentation/quartz-2.x/quick-start.html) ("Configuration" section):
 
 ```csharp
     var quartzConfig = new NameValueCollection();
@@ -35,6 +35,9 @@ There is also support for [Quartz StdSchedulerFactory Config](http://www.quartz-
     
     container.RegisterQuartzScheduler(typeof(HelloJob), quartzConfig);
 ```
+
+##Previously asked questions:
+[Resolving a Service with nothing in it](http://stackoverflow.com/questions/36782158/servicestack-funq-quartz-cannot-instantiating-type)
 
 ##ServiceStack
 You can find the ServiceStack framework here:  [https://github.com/ServiceStack/ServiceStack](https://github.com/ServiceStack/ServiceStack)
