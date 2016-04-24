@@ -14,12 +14,15 @@ namespace ServiceStackWithQuartz
 
         public virtual void Execute(IJobExecutionContext context)
         {
-            var response = MyServices.Any(new ServiceModel.Hello
+            using (var service = MyServices)
             {
-                Name = "CodeRevver"
-            });
+                var response = MyServices.Any(new ServiceModel.Hello
+                {
+                    Name = "CodeRevver"
+                });
 
-            response.PrintDump();
+                response.PrintDump();
+            }
         }
     }
 }

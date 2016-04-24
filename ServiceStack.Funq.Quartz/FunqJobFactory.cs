@@ -48,6 +48,11 @@ namespace ServiceStack.Funq.Quartz
         /// <param name="job"></param>
         public void ReturnJob(IJob job)
         {
+            if (job is IDisposable)
+            {
+                var disposableJob = (IDisposable)job;
+                disposableJob.Dispose();
+            }
         }
     }
 }
