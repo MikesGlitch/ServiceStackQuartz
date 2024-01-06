@@ -1,3 +1,5 @@
+> # This package is no longer maintained
+
 # ServiceStackWithQuartz  [![Build status](https://ci.appveyor.com/api/projects/status/sfp7sg7gh6x1x580/branch/master?svg=true)](https://ci.appveyor.com/project/CodeRevver/servicestackwithquartz/branch/master)
 
 ServiceStack.Funq.Quartz allows an easy registration of all Quartz Jobs within ServiceStack's Funq container.  This allows for dependency injection within any Quartz Job.
